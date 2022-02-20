@@ -27,14 +27,14 @@ demo: Demo.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 
-StudentTest1.cpp:  # Michael Trushkin
-	curl https://raw.githubusercontent.com/miko-t/binaryTreeCpp/main/Test.cpp > $@
+# StudentTest1.cpp:  # Michael Trushkin
+# 	curl https://raw.githubusercontent.com/miko-t/binaryTreeCpp/main/Test.cpp > $@
 
-StudentTest2.cpp:  # Yuval Moshe
-	curl https://raw.githubusercontent.com/Yuval-Moshe/CPP-binarytree-a/master/Test.cpp > $@
+# StudentTest2.cpp:  # Yuval Moshe
+# 	curl https://raw.githubusercontent.com/Yuval-Moshe/CPP-binarytree-a/master/Test.cpp > $@
 
-StudentTest3.cpp:  # Asahel Cohen
-	curl https://raw.githubusercontent.com/asahelcohen/BinaryTree-tamplate-cpp/main/Test.cpp > $@
+# StudentTest3.cpp:  # Asahel Cohen
+# 	curl https://raw.githubusercontent.com/asahelcohen/BinaryTree-tamplate-cpp/main/Test.cpp > $@
 
 
 tidy:
