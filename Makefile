@@ -1,6 +1,8 @@
 #!make -f
+# This Makefile can handle any set of cpp and hpp files.
+# To use it, you should put all your cpp and hpp files in the SOURCE_PATH folder.
 
-CXX=clang++-9 
+CXX=clang++-9
 CXXVERSION=c++2a
 SOURCE_PATH=sources
 OBJECT_PATH=objects
@@ -12,36 +14,10 @@ SOURCES=$(wildcard $(SOURCE_PATH)/*.cpp)
 HEADERS=$(wildcard $(SOURCE_PATH)/*.hpp)
 OBJECTS=$(subst sources/,objects/,$(subst .cpp,.o,$(SOURCES)))
 
-run: test1 test2 test3
+run: test
 
-test1: TestRunner.o StudentTest1.o  $(OBJECTS)
+test: TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
-
-test2: TestRunner.o StudentTest2.o  $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
-test3: TestRunner.o StudentTest3.o  $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
-demo: Demo.o $(OBJECTS) 
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
-
-# StudentTest1.cpp:  # Michael Trushkin
-# 	curl https://raw.githubusercontent.com/miko-t/binaryTreeCpp/main/Test.cpp > $@
-
-# StudentTest2.cpp:  # Yuval Moshe
-# 	curl https://raw.githubusercontent.com/Yuval-Moshe/CPP-binarytree-a/master/Test.cpp > $@
-
-# StudentTest3.cpp:  # Asahel Cohen
-# 	curl https://raw.githubusercontent.com/asahelcohen/BinaryTree-tamplate-cpp/main/Test.cpp > $@
-
-
-tidy:
-	clang-tidy sources/BinaryTree.hpp $(TIDY_FLAGS) --
-
-valgrind: test1
-	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test1 2>&1 | { egrep "lost| at " || true; }
 
 %.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
@@ -49,6 +25,24 @@ valgrind: test1
 $(OBJECT_PATH)/%.o: $(SOURCE_PATH)/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
+# Renana Rimon
+StudentTest1.cpp:  
+	curl https://raw.githubusercontent.com/renanarimon/cpp_5b_test/master/Test.cpp > $@
+
+# Shauli Taragin
+StudentTest2.cpp: 
+	curl https://raw.githubusercontent.com/ShauliTaragin/Orgchart-A/main/Test.cpp > $@
+
+# Dvir Gev
+StudentTest3.cpp: 
+	curl https://raw.githubusercontent.com/dvirGev/CPP--Ex5-par1/main/Test.cpp > $@
+
+tidy:
+	clang-tidy $(SOURCES) $(TIDY_FLAGS) --
+
+valgrind: test
+	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
+
 clean:
-	rm -f $(OBJECTS) *.o test* demo*
+	rm -f $(OBJECTS) *.o test* 
 	rm -f StudentTest*.cpp

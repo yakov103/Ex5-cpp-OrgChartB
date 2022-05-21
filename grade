@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source grade_utils
-TIMEOUT=20
+TIMEOUT=60
 run_in_folder_if_exists "$1"
 
 if [ -z "$DEBUG" ]; then
@@ -12,26 +12,12 @@ fi
 total=0
 i=0
 
-let "i=i+1"
+let "i=i+3"
 printf "\n\n### Check $i: all tests should pass\n"
-call make -f Makefile test1
-grade_command ./test1
+call make -f Makefile test
+grade_command ./test
 printf "### Score $i: $grade\n"
-total=$((total + grade))
-
-let "i=i+1"
-printf "\n\n### Check $i: all tests should pass\n"
-call make -f Makefile test2
-grade_command ./test2
-printf "### Score $i: $grade\n"
-total=$((total + grade))
-
-let "i=i+1"
-printf "\n\n### Check $i: all tests should pass\n"
-call make -f Makefile test3
-grade_command ./test3
-printf "### Score $i: $grade\n"
-total=$((total + grade))
+total=$((total + grade * 3))
 
 let "i=i+1"
 printf "\n\n### Check $i: clang-tidy should run without warnings in user code\n"
@@ -48,3 +34,7 @@ total=$((total + grade))
 
 total=$((total / i))
 printf "\n\nGrade: $total\n\n"
+
+if [ -z "$DEBUG" ]; then
+	make -f Makefile --silent clean
+fi
