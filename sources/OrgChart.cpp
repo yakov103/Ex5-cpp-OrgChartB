@@ -5,23 +5,31 @@ namespace ariel {
 
     /* OrgChart Implementation */
 
+
     /*
-    *constractor
+    * @brief constructor
+    * @param none
+    * @return none
     */
+
     OrgChart::OrgChart() {
         _root = nullptr;
 
     }
+
     /*
-    * destructor
+    * @brief destructor
+    * @param none
+    * @return none
     */
+   
 
     OrgChart::~OrgChart() {
        
-    //    while (!_orderedVec.empty()) {
-    //         delete _orderedVec.back();
-    //         _orderedVec.pop_back();
-    //     }
+       while (!_orderedVec.empty()) {
+            delete _orderedVec.back();
+            _orderedVec.pop_back();
+        }
         
 }
 
