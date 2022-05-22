@@ -133,7 +133,7 @@ namespace ariel {
             delete _orderedVec.back(); 
         }
         _orderedVec.clear();
-        this->_orderedVec.push_back(_root);
+        //this->_orderedVec.push_back(_root);
         this->fill_order(_root,PRE_ORDER);
         Node *temp = new Node;
         temp->name= "ENDITERATOR";
@@ -212,22 +212,19 @@ namespace ariel {
                     }
                     _orderedVec.insert(_orderedVec.begin(), temp);
                 }
-                // for (i = node->children.size()-1 ; i >= 0 && i < 4000000000 ; i--){ // 4000000000 because we are using unsigned int
-                //     _orderedVec.insert(_orderedVec.begin(),node->children.at(i));
-                // }
-
-                // for (i = node->children.size()-1 ; i >= 0 && i < 4000000000 ; i--){ // 4000000000 because we are using unsigned int
-                //     fill_order(node->children.at(i), type);
-                // }
-
+         
 
             }
             else if (type == PRE_ORDER){
-                for (i = 0 ; i < node->children.size() ; i++){
-                    _orderedVec.push_back(node->children.at(i));
-                    if (!node->children.at(i)->children.empty()){
-                        fill_order(node->children.at(i), type);
+                stack<Node*> s;
+                s.push(node);
+                while (!s.empty()) {
+                    Node *temp = s.top();
+                    s.pop();
+                    for (i = temp->children.size()-1 ; i >= 0 && i < VERY_LARGE_LONG ; i--) {
+                        s.push(temp->children.at(i));
                     }
+                    _orderedVec.push_back(temp);
                 }
             }
         }
