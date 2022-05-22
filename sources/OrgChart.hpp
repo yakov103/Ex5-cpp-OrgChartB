@@ -10,13 +10,14 @@
 using namespace std;
 
 namespace ariel {
+
+    constexpr long VERY_LARGE_LONG = 4000000000;
+
     enum iterator_type {
         LEVEL_ORDER,
         REVERSE_ORDER,
         PRE_ORDER,
-        END_LEVEL_ORDER,
-        END_REVERSE_ORDER,
-        END_PRE_ORDER
+        END_LEVEL_ORDER
     };
 
     struct Node {
@@ -30,7 +31,6 @@ namespace ariel {
         private :
 
             unsigned int _index;
-            Node * ptr;
             vector<Node*> *  _orderedVecIter;
 
             unsigned int _size{};
@@ -59,7 +59,7 @@ namespace ariel {
         OrgChart& operator= (const OrgChart& other);
         OrgChart& add_root(const string& name);
         OrgChart& add_sub(string parent,string child);
-        bool check_parent(string parent, string child , Node *node);
+        bool check_parent(string &parent, string &child , Node *node);
 
         OrgChart::Iterator begin() ;
         OrgChart::Iterator end();

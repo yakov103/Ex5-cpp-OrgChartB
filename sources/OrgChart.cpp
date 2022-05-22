@@ -50,9 +50,9 @@ namespace ariel {
         return *this;
     }
 
-    bool OrgChart::check_parent(string parent, string child, Node *node)
+    bool OrgChart::check_parent(string &parent, string &child, Node *node)
     {
-        if (node->name.compare(parent) == 0)
+        if (node->name == parent)
         {
             Node *new_sub = new Node;
             new_sub->name = child;
@@ -169,10 +169,8 @@ namespace ariel {
 
     ostream& operator<<(ostream& os,  OrgChart& org) {
         org.begin();
-        unsigned int  i ;
+        unsigned int  i = 0 ;
         unsigned int currLevel = 0 ; 
-        unsigned int total = org._orderedVec.size();
-
         for (i = 0 ; i < org._orderedVec.size()-1; i++){ 
             if (currLevel  == org._orderedVec.at(i)->level){
                 os << org._orderedVec.at(i)->name << " "; 
@@ -209,7 +207,7 @@ namespace ariel {
                 while (!q.empty()) {
                     Node *temp = q.front();
                     q.pop();
-                    for (i = temp->children.size()-1 ; i >= 0 && i < 4000000000 ; i--) {
+                    for (i = temp->children.size()-1 ; i >= 0 && i < VERY_LARGE_LONG ; i--) {
                         q.push(temp->children.at(i));
                     }
                     _orderedVec.insert(_orderedVec.begin(), temp);
@@ -227,7 +225,7 @@ namespace ariel {
             else if (type == PRE_ORDER){
                 for (i = 0 ; i < node->children.size() ; i++){
                     _orderedVec.push_back(node->children.at(i));
-                    if (node->children.at(i)->children.size() > 0){
+                    if (!node->children.at(i)->children.empty()){
                         fill_order(node->children.at(i), type);
                     }
                 }
@@ -240,12 +238,8 @@ namespace ariel {
 
 
     OrgChart::Iterator::Iterator(vector<Node*> * nodes, iterator_type type) {
-        _index = 0;
-   
+        _index = 0;  
         _orderedVecIter = nodes;
-        // for (unsigned int i = 0 ; i < _orderedVecIter->size() ; i++){
-        //     cout << _orderedVecIter->at(i)->name << " ";
-        // }
         if (type == END_LEVEL_ORDER){
             _index = _orderedVecIter->size()-1;
         }
