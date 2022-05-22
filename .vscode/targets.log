@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 22 09:00:39 2022
+# Make data base, printed on Sun May 22 09:36:31 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:61565
+JOURNAL_STREAM = 8:61611
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -75,11 +75,11 @@ CXXFLAGS = -std=$(CXXVERSION) -Werror -Wsign-conversion -I$(SOURCE_PATH)
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=f8953428ffe2e6191d80cfb3628a5c84
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=32aab59e98b255e7f37cd8ac628a666c
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1614
+MANAGERPID = 1559
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -93,7 +93,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1835,unix/ubuntu:/tmp/.ICE-unix/1835
+SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1773,unix/ubuntu:/tmp/.ICE-unix/1773
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -111,7 +111,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 86b0f7709fa84961bb3dd2e7e77f98fe
+INVOCATION_ID = b083cae3c8cd402690d1a55a4ca17ca2
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -137,7 +137,7 @@ PWD = /home/yakovkhodorkovski/Desktop/ex5-partB/orgchart-b
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1800
+SSH_AGENT_PID = 1738
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -193,7 +193,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2642b175-40c8-4804-8063-c730fa604bab.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ad094855-f77c-4479-abf3-c22926298ebf.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -245,11 +245,11 @@ DBUS_STARTER_BUS_TYPE = session
 # makefile (from 'Makefile', line 7)
 SOURCE_PATH = sources
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2cf1dc68_964d_46a3_83f0_21152de4b599
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/b0339cb8_524b_4d5e_91a3_fda8d93263ba
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.124
+GNOME_TERMINAL_SERVICE = :1.83
 # default
 SUFFIXES := 
 # environment
@@ -269,25 +269,24 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 4330
+VSCODE_PID = 2342
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=f8953428ffe2e6191d80cfb3628a5c84
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=32aab59e98b255e7f37cd8ac628a666c
 # makefile (from 'Makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
 # variable set hash-table stats:
 # Load=131/1024=13%, Rehash=0, Collisions=15/165=9%
 
- 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2053, inode 950347): 21 files, no impossibilities.
+# . (device 2053, inode 950347): 13 files, no impossibilities.
 # sources (device 2053, inode 950405): 5 files, no impossibilities.
 
-# 26 files, no impossibilities in 2 directories.
+# 18 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -329,6 +328,7 @@ StudentTest3.cpp:
 #  recipe to execute (from 'Makefile', line 38):
 	curl https://raw.githubusercontent.com/dvirGev/CPP--Ex5-par1/main/Test.cpp > $@
 
+ 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
@@ -419,9 +419,9 @@ StudentTest1.o:
 # strcache buffers: 1 (0) / strings = 38 / storage = 402 B / avg = 10 B
 # current buf: size = 8162 B / used = 402 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 65 / hit rate = 41%
+# strcache performance: lookups = 57 / hit rate = 33%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=2/65=3%
-# Finished Make data base on Sun May 22 09:00:39 2022
+# Load=38/8192=0%, Rehash=0, Collisions=2/57=4%
+# Finished Make data base on Sun May 22 09:36:31 2022
 
  

@@ -36,6 +36,7 @@ namespace ariel {
             unsigned int _size{};
         public :
             Iterator(vector<Node*> * nodes, iterator_type type);
+            Iterator(const Iterator& other);
             Iterator operator++();
             Iterator operator++(int);
             bool operator==(const Iterator& other);

@@ -33,6 +33,11 @@ namespace ariel {
         
 }
 
+    /*
+    * @brief add root
+    * @param name
+    * @return none
+    */
 
 
     OrgChart& OrgChart::operator= (const OrgChart& other) {
@@ -58,6 +63,13 @@ namespace ariel {
         return *this;
     }
 
+    /*
+    * @brief check if the parent is in the tree
+    * 
+    * 
+    * @return none
+    */
+
     bool OrgChart::check_parent(string &parent, string &child, Node *node)
     {
         if (node->name == parent)
@@ -80,7 +92,12 @@ namespace ariel {
         return false;
     }
 
-
+    /*
+    * @brief add sub , if the parent is not null add the child to the parent
+    * @param parent
+    * @param child
+    * @return none
+    */
 
     OrgChart& OrgChart::add_sub(string parent, string child) {
         if (_root == nullptr) {
@@ -93,6 +110,11 @@ namespace ariel {
         return *this;
     }
 
+    /*
+    * @brief init the Iterator with level order by BFS 
+    * @param none
+    * @return Iterator
+    */
 
     OrgChart::Iterator OrgChart::begin_level_order()  {
         if (_root == nullptr) {
@@ -133,6 +155,15 @@ namespace ariel {
         Iterator it = Iterator(&this->_orderedVec, REVERSE_ORDER);
         return it;
     }
+
+    /*
+    * @brief init the iterator in preorder which use DFS 
+    * @param none
+    * 
+    * @return Iterator
+    */
+
+
    OrgChart::Iterator OrgChart::begin_preorder()  {
         if (_root == nullptr) {
             throw "no root";
@@ -149,18 +180,37 @@ namespace ariel {
         Iterator it = Iterator(&this->_orderedVec, PRE_ORDER);
         return it;
    }
+
+    /*
+    * @brief end itarator
+    *
+    * @return Iterator
+    */
+
     OrgChart::Iterator OrgChart::end_level_order() {
               if (_root == nullptr) {
             throw "no root";
         }
         return Iterator(&_orderedVec, END_LEVEL_ORDER);
     }
+
+        /*
+    * @brief end itarator
+    *
+    * @return Iterator
+    */
     OrgChart::Iterator OrgChart::reverse_order() {
               if (_root == nullptr) {
             throw "no root";
         }
         return Iterator(&_orderedVec, END_LEVEL_ORDER);
     }
+
+        /*
+    * @brief end itarator
+    *
+    * @return Iterator
+    */
    OrgChart::Iterator OrgChart::end_preorder(){
              if (_root == nullptr) {
             throw "no root";
@@ -168,12 +218,22 @@ namespace ariel {
           return Iterator(&_orderedVec, END_LEVEL_ORDER);
    }
 
+ /*
+ * @brief send to level order
+ */ 
     OrgChart::Iterator OrgChart::begin(){
         return begin_level_order();
     }
     OrgChart::Iterator OrgChart::end(){
         return end_level_order();
     }
+
+    /*
+    * @brief os stram operator for printing the chart 
+    * @param os
+    * @param chart
+    * @return os
+    */
 
     ostream& operator<<(ostream& os,  OrgChart& org) {
         org.begin();
@@ -193,10 +253,17 @@ namespace ariel {
     }
 
 
-        // will fill the vector with order that wanted .
+        /*
+        *will fill the vector with order that wanted by type  .
+        * level order : using BFS . 
+        * reverse order : using BFS , but we adding the from the start .
+        * pre order : using DFS .
+        */
+
+
     void OrgChart::fill_order(Node *node, iterator_type type) {
             unsigned int i = 0; // index for loop
-            if (type == LEVEL_ORDER) {
+            if (type == LEVEL_ORDER) { // BFS
                 queue <Node *> q;
                 q.push(node);
                 while (!q.empty()) {
@@ -208,7 +275,7 @@ namespace ariel {
                     _orderedVec.push_back(temp);
                 }
             }
-            else if (type == REVERSE_ORDER){
+            else if (type == REVERSE_ORDER){ // Reversed BFS 
 
                 queue<Node*> q;
                 q.push(node);
@@ -223,7 +290,7 @@ namespace ariel {
          
 
             }
-            else if (type == PRE_ORDER){
+            else if (type == PRE_ORDER){ // DFS 
                 stack<Node*> s;
                 s.push(node);
                 while (!s.empty()) {
@@ -241,6 +308,14 @@ namespace ariel {
 
     /* implementation of the iterator */
 
+    /* 
+    *
+    * @brief constructor
+    * @param pointer to vector of nodes. 
+    * @param type of iterator.
+    * 
+    */
+
 
     OrgChart::Iterator::Iterator(vector<Node*> * nodes, iterator_type type) {
         _index = 0;  
@@ -250,6 +325,24 @@ namespace ariel {
         }
     }
 
+    /*
+    * @brief copy constructor
+    * @param iterator
+    * 
+    */  
+
+    OrgChart::Iterator::Iterator(const Iterator& other) {
+        _index = other._index;
+        _orderedVecIter = other._orderedVecIter;
+    }
+
+    /*
+    * @brief operator ++
+    * we just move the index forward . 
+    *   
+    *   
+    * @return Iterator
+    */
 
     OrgChart::Iterator OrgChart::Iterator::operator++() {
         this->_index++;
