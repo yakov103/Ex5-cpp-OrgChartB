@@ -94,7 +94,7 @@ namespace ariel {
             delete _orderedVec.back(); 
         }
         _orderedVec.clear();
-        this->_orderedVec.push_back(_root);
+        //this->_orderedVec.push_back(_root);
         this->fill_order(_root,LEVEL_ORDER);
         Node *temp = new Node;
         temp->name= "ENDITERATOR";
@@ -189,16 +189,16 @@ namespace ariel {
     void OrgChart::fill_order(Node *node, iterator_type type) {
             unsigned int i = 0; // index for loop
             if (type == LEVEL_ORDER) {
-                for (i = 0; i < node->children.size(); i++) {
-                    _orderedVec.push_back(node->children.at(i));
+                queue <Node *> q;
+                q.push(node);
+                while (!q.empty()) {
+                    Node *temp = q.front();
+                    q.pop();
+                    for (i = 0; i < temp->children.size(); i++) {
+                        q.push(temp->children.at(i));
+                    }
+                    _orderedVec.push_back(temp);
                 }
-                for (i = 0; i < node->children.size(); i++) {
-                    fill_order(node->children.at(i), type);
-                }
-                // for (i = 0 ; i < _orderedVec.size() ; i ++){
-                //     cout << _orderedVec.at(i)->name << " ";
-                // }
-                // cout << endl;
             }
             else if (type == REVERSE_ORDER){
 

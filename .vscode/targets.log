@@ -2,122 +2,64 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Sun May 22 02:43:57 2022
- 
+# Make data base, printed on Sun May 22 09:00:39 2022
 
 # Variables
- 
 
- 
 # 'override' directive
- 
 GNUMAKEFLAGS := 
- 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
- 
 ?F = $(notdir $?)
- 
 # makefile (from 'Makefile', line 11)
- 
 VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
- 
 # environment
- 
 DESKTOP_SESSION = ubuntu
- 
 # default
- 
 .SHELLFLAGS := -c
- 
 # environment
- 
 XDG_SESSION_CLASS = user
- 
 # environment
- 
 SNAP_COMMON = /var/snap/code/common
- 
 # environment
- 
 XDG_SESSION_TYPE = x11
- 
 # environment
- 
 VSCODE_LOG_NATIVE = false
- 
 # automatic
- 
 ?D = $(patsubst %/,%,$(dir $?))
- 
 # automatic
- 
 @D = $(patsubst %/,%,$(dir $@))
- 
 # environment
- 
 XAUTHORITY = /run/user/1000/gdm/Xauthority
- 
 # environment
- 
 GDMSESSION = ubuntu
- 
 # environment
- 
 XMODIFIERS = @im=ibus
- 
 # makefile
- 
 CURDIR := /home/yakovkhodorkovski/Desktop/ex5-partB/orgchart-b
- 
 # makefile
- 
 SHELL = /bin/sh
- 
 # environment
- 
 SNAP_DATA = /var/snap/code/97
- 
 # environment
- 
 VTE_VERSION = 6003
- 
 # environment
- 
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
- 
 # environment
- 
-JOURNAL_STREAM = 8:64058
- 
+JOURNAL_STREAM = 8:61565
 # environment
- 
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
- 
 # environment
- 
 SNAP_INSTANCE_NAME = code
- 
 # environment
- 
 SNAP_ARCH = amd64
- 
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # automatic
@@ -133,11 +75,11 @@ CXXFLAGS = -std=$(CXXVERSION) -Werror -Wsign-conversion -I$(SOURCE_PATH)
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=68722cee7a1e7318f4b2d6de628912f3
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=f8953428ffe2e6191d80cfb3628a5c84
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1583
+MANAGERPID = 1614
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -151,7 +93,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1809,unix/ubuntu:/tmp/.ICE-unix/1809
+SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1835,unix/ubuntu:/tmp/.ICE-unix/1835
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -169,7 +111,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 8b1acdcb8b1c4430b747ae503740b85d
+INVOCATION_ID = 86b0f7709fa84961bb3dd2e7e77f98fe
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -195,7 +137,7 @@ PWD = /home/yakovkhodorkovski/Desktop/ex5-partB/orgchart-b
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1768
+SSH_AGENT_PID = 1800
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -251,7 +193,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-106d6409-6b46-49cb-8f90-ca425f5bd93f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2642b175-40c8-4804-8063-c730fa604bab.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -285,8 +227,6 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -305,11 +245,11 @@ DBUS_STARTER_BUS_TYPE = session
 # makefile (from 'Makefile', line 7)
 SOURCE_PATH = sources
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/cc2eaaff_b243_4bca_9615_4ebb6f4f7a6c
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2cf1dc68_964d_46a3_83f0_21152de4b599
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.1544
+GNOME_TERMINAL_SERVICE = :1.124
 # default
 SUFFIXES := 
 # environment
@@ -329,24 +269,25 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 15944
+VSCODE_PID = 4330
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=68722cee7a1e7318f4b2d6de628912f3
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=f8953428ffe2e6191d80cfb3628a5c84
 # makefile (from 'Makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=15/166=9%
+# Load=131/1024=13%, Rehash=0, Collisions=15/165=9%
 
+ 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2053, inode 950347): 20 files, no impossibilities.
+# . (device 2053, inode 950347): 21 files, no impossibilities.
 # sources (device 2053, inode 950405): 5 files, no impossibilities.
 
-# 25 files, no impossibilities in 2 directories.
+# 26 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -375,32 +316,34 @@ TestRunner.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+StudentTest2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 StudentTest3.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 38):
 	curl https://raw.githubusercontent.com/dvirGev/CPP--Ex5-par1/main/Test.cpp > $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 02:43:33.326224391
+#  Last modified 2022-05-22 03:02:36.360523178
 #  File has been updated.
 #  Successfully updated.
 
-test: TestRunner.o StudentTest1.o StudentTest3.o objects/OrgChart.o
+test: TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o objects/OrgChart.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 20):
- 
 	$(CXX) $(CXXFLAGS) $^ -o $@
- 
 
- 
 StudentTest1.cpp:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -434,22 +377,29 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
+#  recipe to execute (from 'Makefile', line 47):
 	rm -f $(OBJECTS) *.o test* 
 	rm -f StudentTest*.cpp
+
+StudentTest2.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 34):
+	curl https://raw.githubusercontent.com/ShauliTaragin/Orgchart-A/main/Test.cpp > $@
 
 tidy:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 41):
 	clang-tidy $(SOURCES) $(TIDY_FLAGS) --
 
 valgrind: test
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 44):
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # Not a target:
@@ -459,19 +409,19 @@ StudentTest1.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/35=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 37 / storage = 387 B / avg = 10 B
-# current buf: size = 8162 B / used = 387 B / count = 37 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 402 B / avg = 10 B
+# current buf: size = 8162 B / used = 402 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 61 / hit rate = 39%
+# strcache performance: lookups = 65 / hit rate = 41%
 # hash-table stats:
-# Load=37/8192=0%, Rehash=0, Collisions=2/61=3%
-# Finished Make data base on Sun May 22 02:43:57 2022
+# Load=38/8192=0%, Rehash=0, Collisions=2/65=3%
+# Finished Make data base on Sun May 22 09:00:39 2022
 
  
