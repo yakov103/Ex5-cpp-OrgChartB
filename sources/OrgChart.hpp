@@ -31,7 +31,7 @@ namespace ariel {
         private :
 
             unsigned int _index;
-            vector<Node*> *  _orderedVecIter;
+            vector<Node*> *  _orderedVecIter; // o(1)
 
             unsigned int _size{};
         public :
@@ -49,24 +49,25 @@ namespace ariel {
 
 
     public :
-        Node* _root;
-        vector<Node*>  _orderedVec;
+        Node* _root;// o(n)
+        vector<Node*>  _orderedVec;// o(n)
 
-        OrgChart();
-        ~OrgChart();
-        void fill_order(Node *node , iterator_type type);
+        OrgChart(); // constractor
+        ~OrgChart(); // destructor
+        OrgChart(const OrgChart& other) ; // copy constractor
+        void fill_order(Node *node , iterator_type type); // fill the nodes
 
 
-        OrgChart& operator= (const OrgChart& other);
-        OrgChart& add_root(const string& name);
-        OrgChart& add_sub(string parent,string child);
-        bool check_parent(string &parent, string &child , Node *node);
+        OrgChart& operator= (const OrgChart& other); // assignment operator
+        OrgChart& add_root(const string& name); // add root 
+        OrgChart& add_sub(string parent,string child); // add sub
+        bool check_parent(string &parent, string &child , Node *node);// check if parent exist
 
-        OrgChart::Iterator begin() ;
-        OrgChart::Iterator end();
-        OrgChart::Iterator begin_level_order() ;
-        OrgChart::Iterator begin_reverse_order() ;
-        OrgChart::Iterator begin_preorder() ;
+        OrgChart::Iterator begin() ; // begin iterator
+        OrgChart::Iterator end(); // end iterator
+        OrgChart::Iterator begin_level_order() ; // begin iterator level order
+        OrgChart::Iterator begin_reverse_order() ; // begin iterator reverse order
+        OrgChart::Iterator begin_preorder() ; // begin iterator preorder
         OrgChart::Iterator end_level_order() ;
         OrgChart::Iterator reverse_order()  ;
        OrgChart::Iterator end_preorder() ;

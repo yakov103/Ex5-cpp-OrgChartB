@@ -17,6 +17,19 @@ namespace ariel {
 
     }
 
+    /* 
+    *
+    *@brief copy constructor
+    *@param const OrgChart& other
+    *@return OrgChart&
+    */
+
+    OrgChart::OrgChart(const OrgChart& other) {
+        _root = nullptr;
+        _orderedVec = other._orderedVec;
+        _root = other._root;
+    }
+
     /*
     * @brief destructor
     * @param none
@@ -34,15 +47,18 @@ namespace ariel {
 }
 
     /*
-    * @brief add root
+    * @brief assignment operator
     * @param name
     * @return none
     */
 
 
-    OrgChart& OrgChart::operator= (const OrgChart& other) {
+    OrgChart& OrgChart::operator= (const OrgChart& other) { // assignment operator
         if (this != &other) {
-            delete _root;
+            while (!_orderedVec.empty()) {
+                delete _orderedVec.back();
+                _orderedVec.pop_back();
+            }
             _root = other._root;
         }
         return *this;
