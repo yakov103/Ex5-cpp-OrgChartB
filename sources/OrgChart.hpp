@@ -51,8 +51,6 @@ namespace ariel {
     public :
         Node* _root;// o(n)
         vector<Node*>  _orderedVec;// o(n)
-        vector<Node*>  _orderedVecReverse;// o(n)
-        vector<Node*>  _orderedVecPre;//o(n)
 
         OrgChart(); // constractor
         ~OrgChart(); // destructor
