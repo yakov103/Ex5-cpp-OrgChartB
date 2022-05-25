@@ -25,9 +25,15 @@ namespace ariel {
     */
 
     OrgChart::OrgChart(const OrgChart& other) {
-        _root = nullptr;
-        _orderedVec = other._orderedVec;
-        _root = other._root;
+    _root = nullptr;
+     add_root(other._root->name); // deep copy 
+    Node * temp = nullptr; 
+    for (unsigned int j = 0 ; j < other._orderedVec.size() ; j++) {
+       temp = other._orderedVec.at(j);
+       for (unsigned int i = 0; i < temp->children.size(); i++) {
+           add_sub(temp->name, temp->children[i]->name);
+       }
+    }
     }
 
     /*
@@ -54,14 +60,23 @@ namespace ariel {
 
 
     OrgChart& OrgChart::operator= (const OrgChart& other) { // assignment operator
-        if (this != &other) {
-            while (!_orderedVec.empty()) {
-                delete _orderedVec.back();
-                _orderedVec.pop_back();
-            }
-            _root = other._root;
-        }
-        return *this;
+    if (this == &other) {
+        return *this; // if the same object, return the object
+    }
+    while (!_orderedVec.empty()) {
+        delete _orderedVec.back();
+        _orderedVec.pop_back();
+    }
+    add_root(other._root->name); // deep copy 
+    Node * temp  = nullptr; 
+    for (unsigned int j = 0 ; j < other._orderedVec.size() ; j++) {
+       temp = other._orderedVec.at(j);
+       for (unsigned int i = 0; i < temp->children.size(); i++) {
+           add_sub(temp->name, temp->children.at(i)->name);
+       }
+    }
+
+    return *this; 
     }
 
     /*
