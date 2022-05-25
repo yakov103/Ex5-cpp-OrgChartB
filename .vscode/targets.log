@@ -2,40 +2,24 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Tue May 24 23:08:59 2022
- 
+# Make data base, printed on Wed May 25 08:42:32 2022
 
 # Variables
- 
 
- 
 # 'override' directive
- 
 GNUMAKEFLAGS := 
- 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
- 
 ?F = $(notdir $?)
- 
 # makefile (from 'Makefile', line 11)
-VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
+VALGRIND_FLAGS = -v 
 # environment
 DESKTOP_SESSION = ubuntu
 # default
@@ -209,7 +193,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d5c2c72a-e5ac-41f2-9590-e320bda206e3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-923a5a13-7bce-4217-8e06-3f8027828365.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -261,11 +245,11 @@ DBUS_STARTER_BUS_TYPE = session
 # makefile (from 'Makefile', line 7)
 SOURCE_PATH = sources
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/3f44be99_09fd_4681_be07_e4d3dc757e5b
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/851c8b4c_5238_4ce3_b7d1_c5c41abc66a2
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.777
+GNOME_TERMINAL_SERVICE = :1.2023
 # default
 SUFFIXES := 
 # environment
@@ -285,7 +269,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 27252
+VSCODE_PID = 45792
 # environment
 DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=32aab59e98b255e7f37cd8ac628a666c
 # makefile (from 'Makefile', line 10)
@@ -293,6 +277,7 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 # variable set hash-table stats:
 # Load=131/1024=13%, Rehash=0, Collisions=15/165=9%
 
+ 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
@@ -310,7 +295,6 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 #  recipe to execute (from 'Makefile', line 23):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
- 
 objects/%.o: sources/%.cpp sources/OrgChart.hpp
 #  recipe to execute (from 'Makefile', line 26):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
@@ -348,7 +332,7 @@ StudentTest3.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 03:02:36.360523178
+#  Last modified 2022-05-25 08:13:55.722497962
 #  File has been updated.
 #  Successfully updated.
 
@@ -416,7 +400,7 @@ valgrind: test
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 44):
-	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
+	valgrind test 2>&1 | { egrep "lost| at " || true; }
 
 # Not a target:
 StudentTest1.o:
@@ -438,6 +422,6 @@ StudentTest1.o:
 # strcache performance: lookups = 57 / hit rate = 33%
 # hash-table stats:
 # Load=38/8192=0%, Rehash=0, Collisions=2/57=4%
-# Finished Make data base on Tue May 24 23:08:59 2022
+# Finished Make data base on Wed May 25 08:42:32 2022
 
  

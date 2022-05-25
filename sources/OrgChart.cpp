@@ -25,7 +25,7 @@ namespace ariel {
     */
 
     OrgChart::OrgChart(const OrgChart& other) {
-    _root = nullptr;
+    _root = nullptr; 
      add_root(other._root->name); // deep copy 
     Node * temp = nullptr; 
     for (unsigned int j = 0 ; j < other._orderedVec.size() ; j++) {
@@ -45,9 +45,14 @@ namespace ariel {
 
     OrgChart::~OrgChart() {
        
-       while (!_orderedVec.empty()) {
-            delete _orderedVec.back();
-            _orderedVec.pop_back();
+    //    while (!_orderedVec.empty()) {
+    //         delete _orderedVec.back();
+    //         _orderedVec.pop_back();
+    //     }
+
+        while (!_vecClean.empty()) {
+            delete _vecClean.back();
+            _vecClean.pop_back();
         }
         
 }
@@ -91,6 +96,7 @@ namespace ariel {
         _root = new Node;
         _root->name = name;
         _root->level = 0 ; 
+        _vecClean.push_back(_root);
         return *this;
     }
 
@@ -109,6 +115,7 @@ namespace ariel {
             new_sub->name = child;
             new_sub->level = node->level +1 ; 
             node->children.push_back(new_sub);
+            _vecClean.push_back(new_sub);
             return true;
         }
         for (unsigned int i = 0; i < node->children.size(); i++)

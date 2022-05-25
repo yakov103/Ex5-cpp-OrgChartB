@@ -45,8 +45,7 @@ namespace ariel {
             string* operator->();
 
         };
-
-
+        vector<Node*> _vecClean;
 
     public :
         Node* _root;// o(n)
