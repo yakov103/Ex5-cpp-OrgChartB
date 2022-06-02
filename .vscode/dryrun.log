@@ -1,5 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/yakovkhodorkovski/Desktop/ex5-partB/orgchart-b'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/yakovkhodorkovski/Desktop/ex5_valgrindfix/Ex5-cpp-OrgChartB'
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestRunner.cpp -o TestRunner.o
 curl https://raw.githubusercontent.com/renanarimon/cpp_5b_test/master/Test.cpp > StudentTest1.cpp
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest1.cpp -o StudentTest1.o
@@ -9,5 +9,5 @@ curl https://raw.githubusercontent.com/dvirGev/CPP--Ex5-par1/main/Test.cpp > Stu
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest3.cpp -o StudentTest3.o
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/OrgChart.cpp -o objects/OrgChart.o
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o objects/OrgChart.o -o test
-make: Leaving directory '/home/yakovkhodorkovski/Desktop/ex5-partB/orgchart-b'
+make: Leaving directory '/home/yakovkhodorkovski/Desktop/ex5_valgrindfix/Ex5-cpp-OrgChartB'
  

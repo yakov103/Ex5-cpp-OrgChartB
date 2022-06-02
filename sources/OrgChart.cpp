@@ -44,17 +44,11 @@ namespace ariel {
    
 
     OrgChart::~OrgChart() {
-       
-    //    while (!_orderedVec.empty()) {
-    //         delete _orderedVec.back();
-    //         _orderedVec.pop_back();
-    //     }
 
-        while (!_vecClean.empty()) {
-            delete _vecClean.back();
-            _vecClean.pop_back();
+       while (!_orderedVec.empty()) {
+            delete _orderedVec.back();
+            _orderedVec.pop_back();
         }
-        
 }
 
     /*
@@ -97,6 +91,7 @@ namespace ariel {
         _root->name = name;
         _root->level = 0 ; 
         _vecClean.push_back(_root);
+        this->begin();
         return *this;
     }
 
@@ -145,6 +140,7 @@ namespace ariel {
         {
             throw std::invalid_argument("parent not found");
         }
+         this->begin();
         return *this;
     }
 

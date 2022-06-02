@@ -41,7 +41,7 @@ tidy:
 	clang-tidy $(SOURCES) $(TIDY_FLAGS) --
 
 valgrind: test
-	valgrind --tool=memcheck $(VALGRIND_FLAGS) test 2>&1 | { egrep "lost| at " || true; }
+	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 clean:
 	rm -f $(OBJECTS) *.o test* 
